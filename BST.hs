@@ -40,3 +40,16 @@ insBST (Nod currentVal leftTree rightTree) insertedVal
     | currentVal < insertedVal  = Nod insertedVal (insert leftTree currentVal) rightTree
     | currentVal == insertedVal = Nod insertedVal leftTree rightTree
     | currentVal > insertedVal  = Nod insertedVal leftTree (insert rightTree currentVal)
+
+
+main :: IO ()
+main = do
+
+   let myTreee = insBST myTree 7
+
+   print (inOrder myTreee)
+
+   print (val "c" [("a",5.13),("b",2.11)])
+   print (val "c" [])
+
+   return()
