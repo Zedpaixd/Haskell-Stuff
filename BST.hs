@@ -37,9 +37,9 @@ search (Nod currentVal leftTree rightTree) searchedVal
 insBST :: Tree -> Integer -> Tree
 insBST Leaf currentVal = Nod currentVal Leaf Leaf
 insBST (Nod currentVal leftTree rightTree) insertedVal
-    | currentVal < insertedVal  = Nod currentVal (insBST leftTree insertedVal) rightTree
+    | currentVal > insertedVal  = Nod currentVal (insBST leftTree insertedVal) rightTree
     | currentVal == insertedVal = Nod currentVal leftTree rightTree
-    | currentVal > insertedVal  = Nod currentVal leftTree (insBST rightTree insertedVal)
+    | currentVal < insertedVal  = Nod currentVal leftTree (insBST rightTree insertedVal)
 
 
 main :: IO ()
